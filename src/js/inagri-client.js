@@ -5,14 +5,14 @@
 import axios from 'axios'
 import { webStorage } from './utils'
 
-const API_BASE = 'https://api.inagri.asia/v1/';
+const API_BASE = 'https://api.svara.id/v1/';
 
 export default {
   loginApp () {
     return new Promise((resolve, reject) => {
       const credential = {
-        username: 'inagri-debug',
-        password: 'inagri-debug',
+        username: 'svara-debug',
+        password: 'svara-debug',
       };
       axios.post(`${API_BASE}apps/auth/login`, credential).then(response => {
         resolve(response.data)

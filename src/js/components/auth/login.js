@@ -46,7 +46,7 @@ export default class Login extends React.Component {
 
         dispatch(loginUser(credential)).then(() => {
             if (isAuthenticated)
-                hashHistory.push('/')
+                hashHistory.push('/auth/signup')
         }).catch((error) => {
             self.setState({
                 isLoading: false,
@@ -61,14 +61,11 @@ export default class Login extends React.Component {
     }
 
     render() {
-        // const { isAuthenticated } = this.props;
-        // const { isLoading, error } = this.state;
-        // let errorMessage = '';
-        // if (error)
-        //     errorMessage = error.message;
-
-        // if (isAuthenticated)
-        //     hashHistory.push('/');
+        const { isAuthenticated } = this.props;
+        const { isLoading, error } = this.state;
+        let errorMessage = '';
+        if (error)
+            errorMessage = error.message;
     
         return (
 
@@ -99,7 +96,7 @@ export default class Login extends React.Component {
                              <div className="heading wow fadeInUp">
                                     <h2>Login</h2>
                                  <div className="form-group">
-                                     <form onSubmit={this.handleSubmit.bind(this)} method="post" id="contact-form">
+                                     <form onSubmit={this.handleSubmit.bind(this)}  id="contact-form">
                                          <div className="form-group">
                                             <input name="username" type="text" placeholder="Email/Username" className="form-control rounded input-lg text-center no-border" />
                                          </div>

@@ -71,14 +71,14 @@ export default class Home extends React.Component {
                         <div className="col-md-6 col-sm-8 wow fadeInLeft">
                           <div className="wow fadeInDown" data-wow-delay="0.3s">
                             <center>
-                                <a className="btn btn-default btn-register" href="#/auth" role="button">Daftar Sebagai Petani</a>
+                                <a className="btn btn-default btn-register" href="#/auth/signup" role="button">Daftar Sebagai Petani</a>
                             </center>
                             </div>
                         </div>
                         <div className="col-md-5 col-sm-8 wow fadeInLeft" data-wow-delay="0.3s">
                             <div className="wow fadeInDown" data-wow-delay="0.3s">
                             <center>
-                                <a className="btn btn-default btn-register" href="auth" role="button">Daftar Sebagai Pelanggan
+                                <a className="btn btn-default btn-register" href="#/auth/signup" role="button">Daftar Sebagai Pelanggan
                                 </a> 
                             </center>
                             

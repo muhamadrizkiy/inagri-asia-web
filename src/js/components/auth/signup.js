@@ -82,19 +82,12 @@ export default class Signup extends React.Component {
         }
     }
 
-    componentDidMount() {
-        $('.datepicker-input').datepicker()
-    }
-
     render() {
         const { isAuthenticated } = this.props;
         const { isLoading, error, success, account } = this.state;
         let errorMessage = '';
         if (error)
             errorMessage = error.message;
-
-        if (isAuthenticated)
-            hashHistory.push('/');
 
         if (success) {
             return (
@@ -158,7 +151,7 @@ export default class Signup extends React.Component {
                              <div className="heading wow fadeInUp">
                                     <h2>Daftar</h2>
                                  <div className="form-group">
-                                     <form onSubmit={this.handleSubmit.bind(this)} method="post" id="contact-form">
+                                     <form onSubmit={this.handleSubmit.bind(this)} id="contact-form">
                                          <div className="form-group">
                                             <input placeholder="First Name" name="firstName" className="form-control rounded input-lg text-center no-border" defaultValue={account.firstName} />
                                          </div>
