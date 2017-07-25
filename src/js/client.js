@@ -9,10 +9,6 @@ import {hashHistory, IndexRoute, Route, Router} from "react-router";
 
 //Pages
 
-import Auth from "./pages/auth";
-import ActivitiesPage from "./pages/activities-page";
-import ContentPage from "./pages/content-pages";
-import ContentUploadPage from "./pages/content-upload"
 import Home from "./pages/home";
 import Layout from "./pages/layout";
 
@@ -30,10 +26,8 @@ ReactDOM.render(
             <Route path='/' component={Layout}>
                 <IndexRoute component={Home} />
                 <Route path="home" name="home" component={Home} />
-                <Route path="activities" name="activities" component={ActivitiesPage} />
-                <Route path="pages/:parent/:contentPage" component={ContentPage} />
             </Route>
-            <Route path='/auth' component={Auth}>
+            <Route path='/auth' component={Layout}>
                 <IndexRoute component={Login} />
                 <Route path="login" name="login" component={Login} />
                 <Route path="signup" name="signup" component={Signup} />

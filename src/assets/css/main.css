@@ -394,14 +394,11 @@ a:active {
 
 }
 
-
-
-
 .navbar-default {
-    padding:20px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.15);
+    padding:10px;
 }
-
-
 
 /* #hero-area  */
 .animated .logo-2 {
@@ -416,15 +413,7 @@ a:active {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default.animated .navbar-nav > li > a:hover {
-    color: #009ee5;
-}
-.navbar-default {
-    background-color: transparent;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-       -moz-transition: all 0.3s ease-in-out 0s;
-        -ms-transition: all 0.3s ease-in-out 0s;
-         -o-transition: all 0.3s ease-in-out 0s;
-            transition: all 0.3s ease-in-out 0s;
+    color: #000;
 }
 
 .navbar-default.animated {
@@ -433,26 +422,15 @@ a:active {
     padding:10px;
 }
 
-
-
-
-.navbar-default {
-    background-color: transparent;
-    border: 0;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
 .navbar-default .navbar-brand {
     font-size: 20px;
-    color: #fff;
+    color: #000;
     padding: 5px 0;
 }
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > a:hover {
     font-size: 20px;
-    color: #fff;
+    color: #000;
     position: relative;
 }
 .navbar-default.animated .navbar-nav > li > a,
@@ -460,7 +438,7 @@ a:active {
     color: #000;
 }
 .navbar-default .navbar-nav > li.current > a {
-    color: #fff;
+    color: #000;
 }
 .navbar-default.animated .navbar-nav > li.current > a {
     color: #82c25a;
@@ -829,8 +807,8 @@ hr {
 }
 .btn-send {
     line-height: 48px;
-    border: 2px solid #47b475;
-    background: #47b475;
+    border: 2px solid #95D600;
+    background: #95D600;
     color: #fff;
     width: 100%;
     font-size: 15px;

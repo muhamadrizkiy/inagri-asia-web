@@ -1,41 +1,13 @@
 /**
- * Created by luthfi on 12/16/16.
+ * Created by muhamadrizki on 24/07/17.
  */
+
 import React from 'react'
 import {connect} from 'react-redux'
 import { hashHistory } from 'react-router'
 import Notifications from 'react-notify-toast'
 
-import Content from '../components/layout/content'
-import Header from '../components/layout/header'
-import Player from '../components/layout/player'
-import SideNavigation from '../components/layout/side-navigation'
-
 import {getAccount} from '../actions/accounts/get-account-actions'
-
-var songs = [
-    {
-        title:"Bubble",
-        artist:"Miaow",
-        mp3:"http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.ogg",
-        poster: "assets/images/m0.jpg",
-        id: 1
-    },
-    {
-        title:"Lentement",
-        artist:"Miaow",
-        mp3:"http://flatfull.com/themes/assets/musics/Miaow-03-Lentement.ogg",
-        poster: "assets/images/m1.jpg",
-        id: 2
-    },
-    {
-        title:"Partir",
-        artist:"Miaow",
-        mp3:"http://flatfull.com/themes/assets/musics/Miaow-09-Partir.ogg",
-        poster: "assets/images/m2.jpg",
-        id: 3
-    }
-];
 
 @connect((store) => {
     return {
@@ -62,14 +34,6 @@ export default class Layout extends React.Component {
         this.setState({navMobileOpen: !this.state.navMobileOpen});
     }
 
-    addSong() {
-        this.refs.player.addSong({
-            title:"Sukapura",
-            artist:"Test",
-            mp3:"http://stream.suararadio.com:8000/tasik_sukapurafm_aac",
-            poster: "images/m0.jpg"
-        });
-    }
 
     componentWillMount() {
         const { dispatch, userId} = this.props;
@@ -81,27 +45,52 @@ export default class Layout extends React.Component {
     }
 
     render() {
-        const { dispatch, isAuthenticated, account } = this.props;
-
-        if(!isAuthenticated)
-            hashHistory.push('/auth');
-
         return (
-            <div style={{height:'100%'}}>
-                <Notifications />
-                <section className="vbox">
-                    <Header dispatch={dispatch} account={account} isAuthenticated={isAuthenticated} addSong={this.addSong.bind(this)} toggleNavMobile={this.toggleNavMobile.bind(this)} toggleSideNav={this.toggleSideNav.bind(this)} sideNavOpen={this.state.sideNavOpen} />
-                    <section>
-                        <section className="hbox stretch">
-                            <SideNavigation toggleNavMobile={this.toggleNavMobile.bind(this)} sideNavOpen={this.state.sideNavOpen} navMobileOpen={this.state.navMobileOpen} />
-                            <Content>
-                                {React.cloneElement(this.props.children, { account: account })}
-                            </Content>
-                        </section>
-                    </section>
-                </section>
-                <Player navMobileOpen={this.state.navMobileOpen} ref="player" />
+            <div>
+            <div className="navbar-default navbar-fixed-top" id="navigation">
+              <div className="container">
+                  
+                  <div className="navbar-header">
+                      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                          <span className="sr-only">Toggle navigation</span>
+                          <span className="icon-bar"></span>
+                          <span className="icon-bar"></span>
+                          <span className="icon-bar"></span>
+                      </button>
+                      <a className="navbar-brand" href="#">
+                            <img className="logo-1" src={"assets/images/logo-2.png"} alt="LOGO" width="171px" height="38px"/>
+                          <img className="logo-2" src={"assets/images/logo-2.png"} alt="LOGO" width="171px" height="38px"/>
+                      </a>
+                  </div>
+
+                  <nav className="collapse navbar-collapse" id="navbar">
+                      <ul className="nav navbar-nav navbar-right" id="top-nav">
+                          <li className="current"><a href="#/">Cara Kerja</a></li>
+                          <li><a href="#/">Produk</a></li>
+                            <li><a href="#/auth/login">Masuk</a></li>
+                            <li><a href="#/auth/signup">Register</a></li>
+                      </ul>
+                  </nav>
+              </div>
             </div>
+
+            <div>
+            {this.props.children}
+            </div>
+            <footer>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="block">
+                                <p>Copyright &copy; <a href="http://www.inagri.asia">Inagri Asia</a>| All right reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            </div>
+
         );
     }
 }

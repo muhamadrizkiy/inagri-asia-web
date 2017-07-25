@@ -1,9 +1,10 @@
 /**
- * Created by luthfi on 12/20/16.
+ * Created by muhamadrizki on 24/07/17.
  */
+
 //Middleware for calling API
 import { webStorage } from '../../utils'
-import svaraClient from '../../svara-client'
+import inagriClient from '../../inagri-client'
 
 import { getAccount } from './get-account-actions'
 
@@ -45,7 +46,7 @@ export function loginUser(credential) {
     return dispatch => {
         // We dispatch requestLogin to kickoff the call to the API
         dispatch(requestLogin(credential));
-        return svaraClient.loginAccount(credential)
+        return inagriClient.loginAccount(credential)
             .then(function (response) {
                 console.log(response);
                 if (response.accessToken === undefined) {
