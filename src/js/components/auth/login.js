@@ -46,7 +46,7 @@ export default class Login extends React.Component {
 
         dispatch(loginUser(credential)).then(() => {
             if (isAuthenticated)
-                hashHistory.push('/auth/signup')
+                hashHistory.push('/dashboard')
         }).catch((error) => {
             self.setState({
                 isLoading: false,
