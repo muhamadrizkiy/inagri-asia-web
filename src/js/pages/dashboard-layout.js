@@ -63,9 +63,8 @@ export default class Layout extends React.Component {
 
                   <nav className="collapse navbar-collapse" id="navbar">
                       <ul className="nav navbar-nav navbar-right" id="top-nav">
-                          <li className="current"><a href="#/">Dashboard</a></li>
-                          <li className="current"><a href="#/">Komoditas</a></li>
-                            <li><a href="#/auth/signup">Keluar</a></li>
+                          <li className="current"><a href="#/komoditas/view">Komoditas</a></li>
+                            <li><a href="#/">Keluar</a></li>
                       </ul>
                   </nav>
               </div>

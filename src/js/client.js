@@ -18,6 +18,7 @@ import DashboardLayout from "./pages/dashboard-layout";
 import Login from "./components/auth/login";
 import Signup from "./components/auth/signup";
 import DashboardContentSupplier from "./components/dashboard/content-supplier";
+import KomoditasView from "./components/komoditas/view";
 import Komoditas from "./components/supplier/komoditas";
 
 import store from "./store";
@@ -39,7 +40,10 @@ ReactDOM.render(
             <Route path='/dashboard' component={DashboardLayout}>
                 <IndexRoute component={DashboardContentSupplier} />
                 <Route path="DashboardContentSupplier" name="DashboardContentSupplier" component={DashboardContentSupplier} />
-                <Route path="komoditas" name="komoditas" component={Komoditas} />
+            </Route>
+            <Route path='/komoditas' component={DashboardLayout}>
+                <IndexRoute component={Komoditas} />
+                <Route path="view" name="view" component={KomoditasView} />
             </Route>
         </Router>
     </Provider>

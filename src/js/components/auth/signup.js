@@ -63,7 +63,7 @@ export default class Signup extends React.Component {
                     coverImage : ' ',
                 }
             });
-            svaraClient.registerAccount(account).then(() => {
+            inagriClient.registerAccount(account).then(() => {
                 self.setState({
                     isLoading: false,
                     success: true
@@ -151,7 +151,7 @@ export default class Signup extends React.Component {
                              <div className="heading wow fadeInUp">
                                     <h2>Daftar</h2>
                                  <div className="form-group">
-                                     <form onSubmit={this.handleSubmit.bind(this)} id="contact-form">
+                                     <form onSubmit={this.handleSubmit.bind(this)}>
                                          <div className="form-group">
                                             <input placeholder="First Name" name="firstName" className="form-control rounded input-lg text-center no-border" defaultValue={account.firstName} />
                                          </div>

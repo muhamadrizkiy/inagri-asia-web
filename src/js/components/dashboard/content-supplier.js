@@ -19,7 +19,7 @@ export default class Content extends React.Component {
                                 <h1 className="wow fadeInDown">Inagri Supplier Dashboard</h1>
                             <p className="wow fadeInDown" data-wow-delay="0.3s">Atur komoditas yang bisa kamu jual disini</p>
                               <div className="wow fadeInDown" data-wow-delay="0.3s">
-                                <a className="btn btn-default btn-home" href="#/dashboard/komoditas" role="button">Mulai Sekarang</a>
+                                <a className="btn btn-default btn-home" href="#/komoditas" role="button">Mulai Sekarang</a>
                               </div>
                           </div>
                       </div>

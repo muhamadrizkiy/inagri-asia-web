@@ -212,7 +212,7 @@ export default class Signup extends React.Component {
                                             </div>
                                         </section>
                                         
-                                         <button className="btn btn-send" type="submit">Daftar</button>
+                                         <button className="btn btn-send" type="submit" href="#/komoditas/view">Daftar</button>
                                      </form>
 
                                      <div id="success">
